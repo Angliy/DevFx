@@ -1,0 +1,140 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CA9189D9-E448-4FAE-9F14-6DF1525DDA0E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HTB.DevFx</RootNamespace>
+    <AssemblyName>HTB.DevFx.BaseFx</AssemblyName>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\HTB.DevFx.BaseFx.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cache\Cache.cs" />
+    <Compile Include="Cache\CacheException.cs" />
+    <Compile Include="Cache\CacheHelper.cs" />
+    <Compile Include="Cache\CacheItem.cs" />
+    <Compile Include="Cache\CacheManager.cs" />
+    <Compile Include="Cache\Config\SectionHandler.cs" />
+    <Compile Include="Cache\ExpirationCacheDependency.cs" />
+    <Compile Include="Cache\FileCacheDependency.cs" />
+    <Compile Include="Cache\ICache.cs" />
+    <Compile Include="Cache\ICacheDependency.cs" />
+    <Compile Include="Cache\ICacheManager.cs" />
+    <Compile Include="Cache\ICacheStorage.cs" />
+    <Compile Include="Cache\NullCacheDependency.cs" />
+    <Compile Include="Cache\NullCacheStorage.cs" />
+    <Compile Include="Cache\RemoteCacheStorageProxy.cs" />
+    <Compile Include="Cache\RemoteCacheStorageServer.cs" />
+    <Compile Include="Config\ConfigSettingCollection.cs" />
+    <Compile Include="Config\ConfigSettingOperator.cs" />
+    <Compile Include="Config\DotNetConfig\BaseConfigurationElement.cs" />
+    <Compile Include="Config\DotNetConfig\BaseConfigurationElementCollection.cs" />
+    <Compile Include="Config\ConfigException.cs" />
+    <Compile Include="Config\ConfigHelper.cs" />
+    <Compile Include="Config\ConfigSetting.cs" />
+    <Compile Include="Config\DotNetConfig\GroupHandler.cs" />
+    <Compile Include="Config\IConfigSetting.cs" />
+    <Compile Include="Config\ISettingProperty.cs" />
+    <Compile Include="Config\ISettingValue.cs" />
+    <Compile Include="Config\DotNetConfig\SectionBaseHandler.cs" />
+    <Compile Include="Config\SettingProperty.cs" />
+    <Compile Include="Config\SettingValue.cs" />
+    <Compile Include="Config\DotNetConfig\ConfigCollection.cs" />
+    <Compile Include="Config\SettingValueCollection.cs" />
+    <Compile Include="Config\XmlConfig\XmlConfigSetting.cs" />
+    <Compile Include="Config\XmlConfig\XmlSettingProperty.cs" />
+    <Compile Include="Config\XmlConfig\XmlSettingValue.cs" />
+    <Compile Include="Core\AOPResult.cs" />
+    <Compile Include="Core\BaseEventArgs.cs" />
+    <Compile Include="Core\IAOPResult.cs" />
+    <Compile Include="Cryptography\CryptographyException.cs" />
+    <Compile Include="Cryptography\HashCrypto.cs" />
+    <Compile Include="Data\Attributes\ColumnAttribute.cs" />
+    <Compile Include="Data\FieldMemberInfo.cs" />
+    <Compile Include="Data\IFieldMemberInfo.cs" />
+    <Compile Include="Data\Utils\DataHelper.cs" />
+    <Compile Include="Data\Utils\DataTransfer.cs" />
+    <Compile Include="Data\Utils\SqlHelper.cs" />
+    <Compile Include="ExceptionManagement\BaseException.cs" />
+    <Compile Include="Log\Config\SectionHandler.cs" />
+    <Compile Include="Log\IBaseLogger.cs" />
+    <Compile Include="Log\LogEventArgs.cs" />
+    <Compile Include="Log\LoggorHelper.cs" />
+    <Compile Include="Log\LogLevel.cs" />
+    <Compile Include="Log\LogException.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\InterceptorAction.cs" />
+    <Compile Include="Security\InterceptorAttribute.cs" />
+    <Compile Include="Utils\Checker.cs" />
+    <Compile Include="Utils\CollectionBase.cs" />
+    <Compile Include="Utils\Converting.cs" />
+    <Compile Include="Utils\Encryption.cs" />
+    <Compile Include="Utils\IConverting.cs" />
+    <Compile Include="Utils\ImageHelper.cs" />
+    <Compile Include="Utils\LogHelper.cs" />
+    <Compile Include="Utils\Mail\Config\SectionHandler.cs" />
+    <Compile Include="Utils\Mail\Config\MailSetting.cs" />
+    <Compile Include="Utils\Mail\MailSender.cs" />
+    <Compile Include="Utils\RandomHelper.cs" />
+    <Compile Include="Utils\TypeHelper.cs" />
+    <Compile Include="Utils\WebHelper.cs" />
+    <Compile Include="Cryptography\XXTEA.cs" />
+    <Compile Include="Web\HttpModules\HttpModuleWrap.cs" />
+    <Compile Include="Web\UI\PagerControlBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\UI\PagerPageEventArgs.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Web\HttpHandlers\Config\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

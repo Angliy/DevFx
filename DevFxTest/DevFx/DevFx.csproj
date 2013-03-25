@@ -1,0 +1,105 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0CE1A4D2-24C3-4EC5-9A4E-0074A9CA3423}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HTB.DevFx</RootNamespace>
+    <AssemblyName>HTB.DevFx</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\HTB.DevFx.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cache\Cacher.cs" />
+    <Compile Include="Config\Configer.cs" />
+    <Compile Include="Config\ConfigManager.cs" />
+    <Compile Include="Config\ConfigManagerCollection.cs" />
+    <Compile Include="Config\ConfigSectionHandler.cs" />
+    <Compile Include="Config\DevFxConfigAttribute.cs" />
+    <Compile Include="Config\DevFxConfigFileAttribute.cs" />
+    <Compile Include="Config\IConfigManager.cs" />
+    <Compile Include="Config\XmlConfigImpl\ConfigManager.cs" />
+    <Compile Include="Core\AppModule.cs" />
+    <Compile Include="Core\CoreFramework.cs" />
+    <Compile Include="Core\CoreModule.cs" />
+    <Compile Include="Core\IFactory.cs" />
+    <Compile Include="Core\IFramework.cs" />
+    <Compile Include="Core\IModule.cs" />
+    <Compile Include="ExceptionManagement\ExceptionFormatter.cs" />
+    <Compile Include="ExceptionManagement\ExceptionHandler.cs" />
+    <Compile Include="ExceptionManagement\ExceptionManager.cs" />
+    <Compile Include="ExceptionManagement\Exceptor.cs" />
+    <Compile Include="ExceptionManagement\IExceptionFormatter.cs" />
+    <Compile Include="ExceptionManagement\IExceptionHandle.cs" />
+    <Compile Include="ExceptionManagement\IExceptionManager.cs" />
+    <Compile Include="ExceptionManagement\Web\ExceptionHttpModule.cs" />
+    <Compile Include="ExceptionManagement\Web\HttpWebException.cs" />
+    <Compile Include="ExceptionManagement\Web\HttpWebExceptionFormatter.cs" />
+    <Compile Include="ExceptionManagement\Web\HttpWebExceptionHandler.cs" />
+    <Compile Include="ExceptionManagement\Web\PageException.cs" />
+    <Compile Include="Framework.cs" />
+    <Compile Include="Log\ILogger.cs" />
+    <Compile Include="Log\ILogManager.cs" />
+    <Compile Include="Log\Logger.cs" />
+    <Compile Include="Log\LoggerImpl\ConsoleLogger.cs" />
+    <Compile Include="Log\LoggerImpl\MailLogger.cs" />
+    <Compile Include="Log\LoggerImpl\TextLogger.cs" />
+    <Compile Include="Log\Loggor.cs" />
+    <Compile Include="Log\LogManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\Mail\MailModule.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BaseFx\BaseFx.csproj">
+      <Project>{CA9189D9-E448-4FAE-9F14-6DF1525DDA0E}</Project>
+      <Name>BaseFx</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Config\htb.devfx.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\" />
+    <Folder Include="Security\" />
+    <Folder Include="Utils\Web\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
